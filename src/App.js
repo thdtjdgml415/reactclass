@@ -1,16 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Main from "./components/Layout/Main";
+import Header from "./components/Layout/Header";
+import Footer from "./components/Layout/Footer";
+import Image from "./components/section/Image";
+import ImageText from "./components/section/ImageText";
+import Card from "./components/section/Card";
+import Text from "./components/section/Text";
+import Banner from "./components/section/Banner";
+import Slider from "./components/section/Slider";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          리액트 시작입니다.
-        </p>
-      </header>
-    </div>
+    <>
+      <Header fonts="nexon" />
+      <Main>
+        <Slider />
+        <Image attr={["section", "nexon", "position", "container"]} />
+        <ImageText attr={["nexon", "section", "position", "container"]} />
+        <Card attr={["section", "nexon", "position", "container"]} />
+        <Banner attr={["nexon", "section", "position"]} />
+        <Text attr={["nexon", "section", "positon", "container"]} />
+      </Main>
+      <Footer attr={["container"]} />
+    </>
   );
 }
 
