@@ -48,8 +48,8 @@ function ImageText({ attr }) {
           <h3>{imgTextTitle.title}</h3>
           <p>{imgTextTitle.desc}</p>
           <ul>
-            {imgTextdesc.map((info) => (
-              <ImgText desc={info.desc} />
+            {imgTextdesc.map((info, index) => (
+              <ImgText key={index} desc={info.desc} />
             ))}
           </ul>
         </div>

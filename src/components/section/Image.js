@@ -37,8 +37,9 @@ function Image(props) {
       <h2>{imageTitle.title}</h2>
       <p>{imageTitle.desc}</p>
       <div className={`image__inner ${props.attr[3]}`}>
-        {imagedesc.map((info) => (
+        {imagedesc.map((info, index) => (
           <ImageText
+            key={index}
             title={info.title}
             desc={info.desc}
             className={info.className}

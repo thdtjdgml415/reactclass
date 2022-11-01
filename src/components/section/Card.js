@@ -92,8 +92,9 @@ function Card({ attr }) {
         <h2>{cardTitle.title}</h2>
         <p>{cardTitle.desc}</p>
         <div className="card__inner">
-          {cardInfo.map((info) => (
+          {cardInfo.map((info, index) => (
             <Cardcontent
+              key={index}
               title={info.title}
               desc={info.desc}
               img={info.img}
