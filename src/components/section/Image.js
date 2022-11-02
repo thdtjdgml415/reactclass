@@ -18,7 +18,7 @@ const imagedesc = [
   },
 ];
 
-const ImageText = ({ title, desc, className }) => {
+function ImageText({ title, desc, className }) {
   return (
     <article className={`image ${className}`}>
       <h3 className="image__title">{title}</h3>
@@ -26,7 +26,7 @@ const ImageText = ({ title, desc, className }) => {
       <a href="/">자세히보기</a>
     </article>
   );
-};
+}
 
 function Image(props) {
   return (

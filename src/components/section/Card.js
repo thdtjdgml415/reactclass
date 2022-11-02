@@ -3,6 +3,9 @@ import React from "react";
 const cardTitle = {
   title: "SPACE PLANETS🐷",
   desc: "행성에 대해 자세히 배워가시면 더욱 도움이 될 것 입니다.",
+  blind: "카드 영역",
+  link: "/",
+  btnlink: "더 자세히 보기",
 };
 
 const cardInfo = [
@@ -65,26 +68,26 @@ const cardInfo = [
   },
 ];
 
-const Cardcontent = ({ title, desc, img, svg }) => {
+function Cardcontent({ title, desc, img, svg }) {
   return (
     <article className="card">
       <figure className="card__header">{img}</figure>
       <div className="card__body">
         <h3 className="tit">{title}</h3>
         <p className="desc">{desc}</p>
-        <a className="btn" href="/">
-          더 자세히 보기
+        <a className="btn" href={cardTitle.link}>
+          {cardTitle.btnlink}
           <span aria-hidden="true">{svg}</span>
         </a>
       </div>
     </article>
   );
-};
+}
 
 function Card({ attr }) {
   return (
     <section id="cardType" className="card__wrap">
-      <h2 className="blind">카드 영역</h2>
+      <h2 className="blind">{cardTitle.blind}</h2>
       <section
         id="cardType"
         className={`card__wrap ${attr[0]} ${attr[1]} ${attr[2]} ${attr[3]}`}

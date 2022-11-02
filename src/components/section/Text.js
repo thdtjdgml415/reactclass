@@ -1,5 +1,11 @@
 import React from "react";
 
+const textTitle = {
+  blind: "텍스트 영역",
+  blind2: "텍스트 유형01",
+  title: "도움을 주신 모든 분들",
+};
+
 const textInfo = [
   {
     className: "t1",
@@ -39,7 +45,7 @@ const textInfo = [
   },
 ];
 
-const Textdesc = ({ className, title, desc, btn }) => {
+function Textdesc({ className, title, desc, btn }) {
   return (
     <div className={`text ${className}`}>
       <h3 className="text__title">{title}</h3>
@@ -49,18 +55,18 @@ const Textdesc = ({ className, title, desc, btn }) => {
       </a>
     </div>
   );
-};
+}
 
 function Text({ attr }) {
   return (
     <section id="textType" className="text__wrap">
-      <h2 className="blind">텍스트 영역</h2>
+      <h2 className="blind">{textTitle.blind}</h2>
       <section
         id="textType"
         className={`text__wrap ${attr[0]} ${attr[1]} ${attr[2]}`}
       >
-        <span className="blind">텍스트 유형01</span>
-        <h2>도움을 주신 모든 분들</h2>
+        <span className="blind">{textTitle.blind2}</span>
+        <h2>{textTitle.title}</h2>
         <div className="text__inner container">
           {textInfo.map((info, index) => (
             <Textdesc

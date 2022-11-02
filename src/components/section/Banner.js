@@ -6,10 +6,11 @@ const BannerInfo = [
     desc: "미지의 탐사를 원하시는 분은",
     small: "배너유형01",
     link: " 많은 질문 부탁드리고 이곳을 클릭해주세요.",
+    blind: "배너 영역",
   },
 ];
 
-const Bannerdesc = ({ title, desc, small, link }) => {
+function Bannerdesc({ title, desc, small, link }) {
   return (
     <div className="banner__inner">
       <h3 className="title">{title}</h3>
@@ -22,7 +23,7 @@ const Bannerdesc = ({ title, desc, small, link }) => {
       </p>
     </div>
   );
-};
+}
 
 function Banner(attr) {
   return (
@@ -30,7 +31,7 @@ function Banner(attr) {
       id="bannerType"
       className={`banner__wrap ${attr[0]} ${attr[1]} ${attr[2]}`}
     >
-      <h2 className="blind">배너 영역</h2>
+      <h2 className="blind">{BannerInfo.blind}</h2>
       {
         BannerInfo.map((info, index) => (
           <Bannerdesc

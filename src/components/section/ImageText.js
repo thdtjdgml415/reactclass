@@ -1,6 +1,7 @@
 import React from "react";
 
 const imgTextTitle = {
+  blind: "유용한 사이트 살펴보기",
   link: "우주에 관한 사이트",
   title: "Space reference",
   desc: "우주산업에 투자해보세요!",
@@ -27,13 +28,38 @@ const imgTextdesc = [
   },
 ];
 
-const ImgText = ({ desc }) => {
+const imgTextimg = [
+  {
+    className: "img1",
+    imgdesc: "레퍼런스 사이트",
+    color: "red",
+    link: "/",
+  },
+  {
+    className: "img2",
+    imgdesc: "튜토리얼 사이트",
+    color: "blue",
+    link: "/",
+  },
+];
+
+function ImgText({ desc }) {
   return (
     <li>
       <a href="/">{desc}</a>
     </li>
   );
-};
+}
+
+function ImgTextimg({ className, imgdesc, link, color }) {
+  return (
+    <div className={`imgText__img ${className}`}>
+      <a href={link} className={`${color}`}>
+        {imgdesc}
+      </a>
+    </div>
+  );
+}
 
 function ImageText({ attr }) {
   return (
@@ -41,7 +67,7 @@ function ImageText({ attr }) {
       id="imgtextType"
       className={`imgText__wrap ${attr[0]} ${attr[1]} ${attr[2]}`}
     >
-      <h2 className="blind">유용한 사이트 살펴보기</h2>
+      <h2 className="blind">{imgTextTitle.blind}</h2>
       <div className={`imgText__inner ${attr[3]}`}>
         <div className="imgText__txt">
           <span>{imgTextTitle.link}</span>
@@ -53,14 +79,24 @@ function ImageText({ attr }) {
             ))}
           </ul>
         </div>
-        <div className="imgText__img img1">
-          <a href="/">레퍼런스 사이트</a>
-        </div>
-        <div className="imgText__img img2">
+
+        {
+          imgTextimg.map((info2, index) => (
+            <ImgTextimg
+              key={index}
+              className={info2.className}
+              imgdesc={info2.imgdesc}
+              link={info2.link}
+              color={info2.color}
+            />
+          ))
+
+          /* <div className="imgText__img img2">
           <a href="/" className="blue">
             튜토리얼 사이트
           </a>
-        </div>
+        </div> */
+        }
       </div>
     </section>
   );
